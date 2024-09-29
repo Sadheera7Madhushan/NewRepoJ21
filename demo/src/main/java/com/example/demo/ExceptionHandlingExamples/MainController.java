@@ -6,9 +6,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The type Main controller.
+ */
 @RestController
 public class MainController {
 
+    /**
+     * Method 1 response entity.
+     *
+     * @return the response entity
+     */
     @RequestMapping("/method1")
     public ResponseEntity<String> method1() {
 
@@ -19,6 +27,11 @@ public class MainController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    /**
+     * Method 12 response entity.
+     *
+     * @return the response entity
+     */
     @RequestMapping("/method2")
     public ResponseEntity<String> method12() {
 
