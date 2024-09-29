@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE_NAME = 'DockerUser456s/repo-for-jenkins'
-        KUBECONFIG_CREDENTIALS_ID = 'kubeconfig' 
+        KUBECONFIG_CREDENTIALS_ID = 'kubeconfig_1'
         KUBERNETES_NAMESPACE = 'my-app-name'
         CLUSTER_NAME = 'my-cluster'
     }
@@ -16,7 +16,7 @@ pipeline {
                     def branch = env.BRANCH_NAME
 
                     // Check if the branch is 'development' or 'release'
-                    if (branch == 'development' || branch == 'release') {
+                    if (branch.startsWith('develop') || branch.startsWith('release') {
                         git branch: branch, url: 'https://github.com/Sadheera7Madhushan/NewRepoJ21.git'
                     } else {
                         error("Branch '${branch}' is not supported. Please use 'development' or 'release'.")
