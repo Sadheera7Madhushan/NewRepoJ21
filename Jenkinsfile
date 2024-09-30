@@ -26,9 +26,14 @@ pipeline {
         }
 
         stage('Build Application') {
-            steps {      
-                sh 'mvn clean package'
-            }
+            steps {
+                    script {
+                        // Specify the directory where the pom.xml is located
+                        dir('demo') {
+                            sh 'mvn clean package'
+                        }
+                    }
+                }
         }
 
         stage('Build Docker Image') {
