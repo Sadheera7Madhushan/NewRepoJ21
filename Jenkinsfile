@@ -16,7 +16,7 @@ pipeline {
                     def branch = env.BRANCH_NAME
 
                     // Check if the branch is 'development' or 'release'
-                    if (branch.startsWith('develop') || branch.startsWith('release') {
+                    if (branch.startsWith('develop') || branch.startsWith('release')) {
                         git branch: branch, url: 'https://github.com/Sadheera7Madhushan/NewRepoJ21.git'
                     } else {
                         error("Branch '${branch}' is not supported. Please use 'development' or 'release'.")
